@@ -1,0 +1,31 @@
+#import "formatting.typ": conf
+#import "formatting.typ": settings
+
+// --------- TITLE, NAMES, ABSTRACT ---------
+
+#show: conf.with(
+  title: [
+    Paper Title
+  ],
+  authors: (
+    (
+      name: "Somebody",
+      affiliation: "University",
+      email: "some@email.com",
+    ),
+    (
+      name: "Somebody",
+      affiliation: "University",
+      email: "some@email.com",
+    ),
+  ),
+  abstract: lorem(80),
+)
+
+// --------- Content Table ---------
+
+#outline(indent: auto, depth: 3)
+
+// --------- CONTENT ---------
+
+#include "content.typst"

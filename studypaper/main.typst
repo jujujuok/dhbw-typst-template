@@ -1,0 +1,64 @@
+#import "formatting.typ": conf
+
+// -------- Titel usw. --------
+
+#show: conf.with(
+  logo: "res/dhbw-logo.png",
+  title: "Title",
+  subtitle: "Subtitle",
+  authors: (
+    (
+      name: "Somebody",
+      affiliation: "University",
+      email: "some@email.com",
+    ),
+  ),
+  date: "Januar 2025",
+  other_info: "Informatik"
+)
+
+#set text(
+  lang: "de",
+  size: 12pt)
+
+#set page(binding: right)
+
+#set par(
+  justify: true,
+)
+
+// -------- Abstract & Declaration of Authorship --------
+#pagebreak()
+#include "abstract.typst"
+// #pagebreak()
+#include "declaration_of_authorship.typst"
+#pagebreak()
+
+// -------- Verzeichnisse --------
+#outline(
+    indent: auto,
+    depth: 2
+    )
+
+#outline(target: figure.where(kind: image), title: "Abbildungsverzeichnis")
+#outline(target: figure.where(kind: table), title: "Tabellenverzeichnis")
+
+#show outline.where(target: figure.where(kind: table)): it => {
+  show outline.entry: set text(red)
+  it
+}
+
+// -------- Seiteneinstellungen --------
+
+#set heading(numbering: "1.1")
+
+#set page(
+  paper: "a4",
+  header: rect(fill: white)[Header Titel],
+  footer: rect(fill: white)[Footer Stuff],
+  numbering: "1"
+)
+
+// -------- Import vom restlichen Inhalt --------
+
+#include "content.typst"

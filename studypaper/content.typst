@@ -1,0 +1,6 @@
+// Files nach Reihenfolge importieren
+
+#pagebreak()
+#include "chapters/literature.typst"
+#pagebreak()
+#include "chapters/summary.typst"
