@@ -1,3 +1,13 @@
+#set document(
+  title: [Some Title], 
+  author: "Prename Name",
+  date: datetime(
+    year: 2024,
+    month: 01,
+    day: 5,
+  )
+)
+
 #import "formatting.typ": conf
 
 // -------- Titel usw. --------
@@ -62,3 +72,9 @@
 // -------- Import vom restlichen Inhalt --------
 
 #include "content.typst"
+
+// --------- BIBLIOGRAPHY ---------
+
+#bibliography("references.bib")
+
+
